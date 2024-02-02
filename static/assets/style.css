@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "inter, sans-serif"; */
+}
+
+body{
+    background-color: #fff;
+}
+
+.side-bar-container{
+    width: 100%;
+    height: 100%;
+    margin-left: -30px;
+}
+
+.sidebar{
+    position: relative;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    padding: 24px;
+    transition: all 0.3s;
+}
+
+.sidebar .head{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.menu-details .title,
+.menu .title{
+    font-size: 10px;
+    font-weight: 500;
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.menu ul li{
+    position: relative;
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.menu thead{
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #757575;
+    text-decoration: none;
+    padding: 3px 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.menu div a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #757575;
+    text-decoration: none;
+    padding: 3px 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.menu ul li a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #757575;
+    text-decoration: none;
+    padding: 3px 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.menu ul li > a:hover,
+.menu ul li.active > a{
+    color: #000;
+    background-color: #f6f6f6;
+}
+
+.menu ul li .icon{
+    font-size: 20px;
+}
+
+menu ul li .text{
+    flex: 1;
+}
+
+.menu ul li .arrow{
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.menu ul li.active .arrow{
+    transform: rotate(180deg);
+}
+
+.menu .sub-menu{
+    display: none;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    border-left: 1px solid #f6f6f6;
+}
+
+.menu .sub-menu li a{
+    padding: 10px 8px;
+    font-size: 12px;
+}
+
+.btn-secondary {
+    padding: 10px 8px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #949292;
+    font-weight: 500;
+}
+
+.btn-link {
+    margin-left: 3px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #949292;
+    font-weight: 500;
+}
+
+.segmentation {
+    width: 100px;
+}
+
+.blur {
+    width: 135px;
+}
+
+.col-md-9{
+    border-left: 3px solid #f6f6f6;
+}

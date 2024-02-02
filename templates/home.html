@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container-home">
+    <div class="container d-flex flex-column align-items-center justify-content-center">
+        <h1 class="title mt-3">PeCeDE Tool</h1>
+        <p class="lead">Free image processing tool.</p>
+        <form id="uploadForm" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+            <div class="custom-file mb-3">
+                <input type="file" id="fileInput" class="custom-file-input" name="file" accept="image/*">
+                <label class="custom-file-label" for="fileInput">Choose an image</label>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-secondary">Upload</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('fileInput').addEventListener('change', function () {
+    const maxFileNameLength = 20; // Adjust the maximum length as needed
+    const fileInput = this;
+    const fileLabel = fileInput.nextElementSibling;
+
+    if (fileInput.files.length > 0) {
+        const fileName = fileInput.files[0].name;
+        if (fileName.length > maxFileNameLength) {
+            // Shorten the file name if it's longer than the maximum length
+            const shortenedFileName = fileName.slice(0, maxFileNameLength) + '...';
+            fileLabel.textContent = shortenedFileName;
+        } else {
+            fileLabel.textContent = fileName;
+        }
+    } else {
+        fileLabel.textContent = 'Choose an image';
+    }
+});
+</script>
+
+{% endblock %}

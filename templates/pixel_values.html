@@ -1,0 +1,243 @@
+{% extends "layout.html" %} {% block body %}
+<link rel="stylesheet" href="../static/assets/style.css" />
+
+<div class="d-flex">
+    <div class="col-md-3">
+        <div class="side-bar-container">
+            <div class="sidebar">
+                <div class="head">
+                    <h1 class="menu-details">Menu</h1>
+                </div>
+                <div class="nav">
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="icon ph-bold ph-circle"></i>
+                                    <span class="text">Umum</span>
+                                    <i class="arrow ph-bold ph-caret-down"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <form id="" action="{{ url_for('normal') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Normal</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('grayscale') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Grayscale</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('zoomin') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Zoom In</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('zoomout') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Zoom Out</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon ph-bold ph-arrows-out-cardinal"></i>
+                                    <span class="text">Pergeseran</span>
+                                    <i class="arrow ph-bold ph-caret-down"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <form id="" action="{{ url_for('move_left') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Geser Kiri</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('move_right') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Geser Kanan</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('move_up') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Geser Atas</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('move_down') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Geser Bawah</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon ph-bold ph-sun"></i>
+                                    <span class="text">Penerangan</span>
+                                    <i class="arrow ph-bold ph-caret-down"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <form id="" action="{{ url_for('brightness_multiplication') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Terang (*)</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('brightness_division') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Gelap (/)</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('brightness_addition') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Terang (+)</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('brightness_substraction') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Gelap (-)</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon ph-bold ph-chart-bar"></i>
+                                    <span class="text">Analisis & Pemrosesan Gambar</span>
+                                    <i class="arrow ph-bold ph-caret-down"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <form id="" action="{{ url_for('histogram_rgb') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Histogram</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('histogram_equalizer') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Histogram Equalizer</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon ph-bold ph-faders"></i>
+                                    <span class="text">Filter Gambar</span>
+                                    <i class="arrow ph-bold ph-caret-down"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <form id="" action="{{ url_for('edge_detection') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Edge Detection</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('blur') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Blur</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form id="" action="{{ url_for('sharpening') }}" method="POST" enctype="multipart/form-data">
+                                            <button type="submit" class="btn btn-secondary text">Sharpening</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="#">
+                                <span class="text">Segmentation</span>
+                            </a>
+                            <form id="" action="{{ url_for('thresholding') }}" method="POST" enctype="multipart/form-data">
+                                <table class="table table-sm mt-3">
+                                    <thead class="text-center">
+                                        <tr>
+                                            <th>Batas Bawah</th>
+                                            <th>Batas Atas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td ><input class="segmentation" type="number" name="lower_thres" placeholder="0-255"></td>
+                                            <td><input class="segmentation" type="number" name="upper_thres" placeholder="0-255"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" class="text-center"><button type="submit" class="btn btn-secondary text mt-2">Thresholding</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <span class="text">Puzzle Pieces</span>
+                            </a>
+                            <form id="puzzled" action="{{ url_for('puzzle') }}" method="POST" enctype="multipart/form-data">
+                                <div class="ml-2 mb-3 d-flex">
+                                    <input type="number" class="segmentation" id="size" name="size" placeholder="Input Value" required>
+                                    <button type="submit" class="btn btn-secondary text ml-2 d-flex align-items-center justify-content-center" style="height: 28px; text-align: center;">Go!</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <span class="text">Puzzle Pieces (Random) </span>
+                            </a>
+                            <form id="puzzled" action="{{ url_for('puzzle_random') }}" method="POST" enctype="multipart/form-data">
+                                <div class="ml-2 mb-3 d-flex">
+                                    <input type="number" class="segmentation" id="size" name="size" placeholder="Input Value" required>
+                                    <button type="submit" class="btn btn-secondary text ml-2 d-flex align-items-center justify-content-center" style="height: 28px; text-align: center;">Go!</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <span class="text">Pixel Values</span>
+                            </a>
+                            <form id="" action="{{ url_for('show_image_values') }}" method="POST" enctype="multipart/form-data">
+                                <button type="submit" class="btn btn-secondary text ml-2 d-flex align-items-center justify-content-center" style="text-align: center;">Generate</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="container">
+            <h5>Nilai Pixel</h5>
+            <h6>Width: {{ width }}</h6>
+            <h6>Height: {{ height }}</h6>
+            <div class="row" style="margin-bottom: 20px;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">R</th>
+                            <th scope="col">G</th>
+                            <th scope="col">B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pixel in pixel_values %}
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td>{{ pixel[0] }}</td>
+                                <td>{{ pixel[1] }}</td>
+                                <td>{{ pixel[2] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
+      integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
+      crossorigin="anonymous">
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../static/assets/script.js"></script>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+{% endblock %}
